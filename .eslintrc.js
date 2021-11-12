@@ -1,7 +1,8 @@
 module.exports = {
     "env": {
         "browser": true,
-        "es2021": true
+        "es2021": true,
+        "node": true
     },
     "extends": "plugin:react/recommended",
     "parserOptions": {
@@ -17,6 +18,7 @@ module.exports = {
     "rules": {
         "semi": ["error", "always"],
         "quotes": ["error", "double"],
-        "react/prop-types": "off"
+        "react/prop-types": "off",
+        "no-undef": "error"
     }
 };
