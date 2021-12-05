@@ -8,9 +8,6 @@ module.exports = {
     "parserOptions": {
         "sourceType": "module"
     },
-    "plugins": [
-        "react"
-    ],
     "rules": {
         "semi": ["error", "always"],
         "quotes": ["error", "double"],
