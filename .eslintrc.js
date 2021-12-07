@@ -13,5 +13,10 @@ module.exports = {
         "quotes": ["error", "double"],
         "react/prop-types": "off",
         "no-undef": "error"
+    },
+    "settings": {
+        "react": {
+            "version": "detect"
+        }
     }
 };
