@@ -4,7 +4,10 @@ module.exports = {
         "es2021": true,
         "node": true
     },
-    "extends": "plugin:react/recommended",
+    "extends": [
+        "plugin:react/recommended",
+        "plugin:react-hooks/recommended"
+    ],
     "parserOptions": {
         "sourceType": "module"
     },
