@@ -7,14 +7,13 @@ module.exports = {
     "extends": [
         "plugin:react/recommended",
         "plugin:react-hooks/recommended",
-        "plugin:jsx-a11y/recommended"
+        "plugin:jsx-a11y/recommended",
+        "prettier"
     ],
     "parserOptions": {
         "sourceType": "module"
     },
     "rules": {
-        "semi": ["error", "always"],
-        "quotes": ["error", "double"],
         "react/prop-types": "off",
         "no-undef": "error"
     },
