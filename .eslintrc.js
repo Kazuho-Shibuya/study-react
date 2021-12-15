@@ -14,6 +14,7 @@ module.exports = {
         "sourceType": "module"
     },
     "rules": {
+        "quotes": "error",
         "react/prop-types": "off",
         "no-undef": "error"
     },
