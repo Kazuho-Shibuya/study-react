@@ -15,8 +15,7 @@ module.exports = {
     sourceType: 'module',
   },
   rules: {
-    // 'react/prop-types': 'off',
-    // 'no-undef': 'error',
+    'no-var': 'error',
   },
   settings: {
     react: {
