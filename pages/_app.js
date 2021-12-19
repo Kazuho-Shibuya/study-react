@@ -7,6 +7,8 @@ function MyApp({ Component, pageProps }) {
     if (state) return;
   }, [state]);
 
+  let foo = 123;
+
   return <Component {...pageProps} />;
 }
 
