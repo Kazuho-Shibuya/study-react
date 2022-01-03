@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from '../styles/Home.module.css';
 
-export default function Home() {
+export default function Headlines() {
   return (
     <div>
       <h1 className={styles.title}>About Page</h1>
