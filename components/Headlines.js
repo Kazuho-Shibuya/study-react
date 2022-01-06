@@ -7,7 +7,7 @@ export default function Headlines(props) {
       <h1 className={styles.title}>{props.title}</h1>
 
       <p className={styles.description}>
-        Get started by editing <code className={styles.code}>pages/about.js</code>
+        Get started by editing <code className={styles.code}>pages/{props.page}.js</code>
       </p>
     </div>
   );
