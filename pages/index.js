@@ -15,7 +15,7 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <Headlines page='index' />
+        <Headlines page='index' code={<code className={styles.code}>pages/index.js</code>} />
         <Links />
       </main>
       <Footer />
