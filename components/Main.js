@@ -3,7 +3,7 @@ import styles from '../styles/Home.module.css';
 import { Links } from '../components/Links';
 import { Headlines } from '../components/Headlines';
 
-export default function Home() {
+export function Main() {
   return (
     <main className={styles.main}>
       <Headlines page='about'>
