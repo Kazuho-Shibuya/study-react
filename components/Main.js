@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '../styles/Home.module.css';
+import styles from './Main.module.css';
 import { Links } from '../components/Links';
 import { Headlines } from '../components/Headlines';
 
