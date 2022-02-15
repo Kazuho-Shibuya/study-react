@@ -1,10 +1,10 @@
 import React from 'react';
 import Link from 'next/link';
-// import styles from './Header.module.css';
+import styles from './Header.module.css';
 
 export function Header() {
   return (
-    <header>
+    <header className={styles.header}>
       <Link href='/'>
         <a>Index</a>
       </Link>
