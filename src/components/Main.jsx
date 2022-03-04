@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './Main.module.css';
-import { Links } from './Links';
+import { Links } from './Link';
 import { Headlines } from './Headline';
 
 export function Main(props) {
