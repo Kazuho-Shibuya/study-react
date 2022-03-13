@@ -14,6 +14,13 @@ export default function Home() {
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <Header />
+      <button
+        onClick={function () {
+          alert(123);
+        }}
+      >
+        ボタン
+      </button>
       <Main page='index' />
       <Footer />
     </div>
