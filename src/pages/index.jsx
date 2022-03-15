@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useEffect } from 'react';
 import Head from 'next/head';
 import styles from 'src/styles/Home.module.css';
 import { Header } from 'src/components/Header';
@@ -9,6 +9,10 @@ export default function Home() {
   const handleClick = useCallback((e) => {
     console.log(e.target.href);
     e.preventDefault();
+  }, []);
+
+  useEffect(() => {
+    document.body.style.backgroundColor = 'lightblue';
   }, []);
 
   return (
