@@ -13,8 +13,10 @@ export default function Home() {
 
   useEffect(() => {
     document.body.style.backgroundColor = 'lightblue';
+    console.log('マウント時');
     return () => {
       document.body.style.backgroundColor = '';
+      console.log('あんマウント時');
     };
   }, []);
 
