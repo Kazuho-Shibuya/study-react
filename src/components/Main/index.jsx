@@ -5,7 +5,7 @@ import styles from 'src/components/Main/Main.module.css';
 
 export function Main(props) {
   useEffect(() => {
-    document.body.style.backgroundColor = 'lightblue';
+    document.body.style.backgroundColor = 'red';
     console.log('マウント時');
     return () => {
       document.body.style.backgroundColor = '';
