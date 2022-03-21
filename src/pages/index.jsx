@@ -7,7 +7,7 @@ import { Main } from 'src/components/Main';
 
 export default function Home() {
   const handleClick = useCallback((e) => {
-    console.log(e.target.href);
+    // console.log(e.target.href);
     e.preventDefault();
   }, []);
 
