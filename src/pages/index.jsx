@@ -6,6 +6,7 @@ import { Footer } from 'src/components/Footer';
 import { Main } from 'src/components/Main';
 
 export default function Home() {
+  const foo = 1;
   const handleClick = (e) => {};
 
   useEffect(() => {
@@ -25,6 +26,7 @@ export default function Home() {
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <Header />
+      <h1>{foo}</h1>
       <button href='/about' onClick={handleClick}>
         ボタン
       </button>
