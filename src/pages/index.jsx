@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Head from 'next/head';
 import styles from 'src/styles/Home.module.css';
 import { Header } from 'src/components/Header';
@@ -6,7 +6,7 @@ import { Footer } from 'src/components/Footer';
 import { Main } from 'src/components/Main';
 
 export default function Home() {
-  const foo = 1;
+  const [foo, setFoo] = useState(1);
   const handleClick = (e) => {};
 
   useEffect(() => {
