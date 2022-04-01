@@ -7,7 +7,9 @@ import { Main } from 'src/components/Main';
 
 export default function Home() {
   const [foo, setFoo] = useState(1);
-  const handleClick = (e) => {};
+  const handleClick = (e) => {
+    setFoo((foo) => foo + 1);
+  };
 
   useEffect(() => {
     document.body.style.backgroundColor = 'lightblue';
