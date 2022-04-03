@@ -6,9 +6,9 @@ import { Footer } from 'src/components/Footer';
 import { Main } from 'src/components/Main';
 
 export default function Home() {
-  const [foo, setFoo] = useState(1);
+  const [count, setCount] = useState(1);
   const handleClick = (e) => {
-    setFoo((foo) => foo + 1);
+    setCount((count) => count + 1);
   };
 
   useEffect(() => {
