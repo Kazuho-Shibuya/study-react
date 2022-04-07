@@ -7,6 +7,7 @@ import { Main } from 'src/components/Main';
 
 export default function Home() {
   const [count, setCount] = useState(1);
+  const [text, setText] = useState('');
   const handleClick = useCallback(() => {
     if (count < 10) {
       setCount((count) => count + 1);
@@ -34,6 +35,13 @@ export default function Home() {
       <button href='/about' onClick={handleClick}>
         ボタン
       </button>
+      <input
+        type='text'
+        value={text}
+        onChange={(e) => {
+          setText(e.target.value);
+        }}
+      />
       <Main page='index' />
       <Footer />
     </div>
