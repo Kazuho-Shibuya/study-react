@@ -6,10 +6,10 @@ export function Header() {
   return (
     <header className={styles.header}>
       <Link href='/'>
-        <a className={styles.anchor}>Index</a>
+        <button className={styles.anchor}>Index</button>
       </Link>
       <Link href='/about'>
-        <a className={styles.anchor}>About</a>
+        <button className={styles.anchor}>About</button>
       </Link>
     </header>
   );
