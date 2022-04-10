@@ -31,17 +31,19 @@ export default function Home() {
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <Header />
-      <h1>{count}</h1>
-      <button href='/about' onClick={handleClick}>
-        ボタン
-      </button>
-      <input
-        type='text'
-        value={text}
-        onChange={(e) => {
-          setText(e.target.value);
-        }}
-      />
+      <div className={styles.count}>
+        <h1>{count}</h1>
+        <button href='/about' onClick={handleClick}>
+          ボタン
+        </button>
+        <input
+          type='text'
+          value={text}
+          onChange={(e) => {
+            setText(e.target.value);
+          }}
+        />
+      </div>
       <Main page='index' />
       <Footer />
     </div>
