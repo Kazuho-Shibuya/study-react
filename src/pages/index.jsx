@@ -40,6 +40,9 @@ export default function Home() {
           type='text'
           value={text}
           onChange={(e) => {
+            if (text.length >= 5) {
+              return;
+            }
             setText(e.target.value);
           }}
         />
