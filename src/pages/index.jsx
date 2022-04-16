@@ -23,6 +23,13 @@ export default function Home() {
     };
   }, [count]);
 
+  const handleChange = (e) => {
+    if (text.length >= 5) {
+      return;
+    }
+    setText(e.target.value);
+  };
+
   return (
     <div className={styles.container}>
       <Head>
@@ -36,16 +43,7 @@ export default function Home() {
         <button href='/about' onClick={handleClick}>
           ボタン
         </button>
-        <input
-          type='text'
-          value={text}
-          onChange={(e) => {
-            if (text.length >= 5) {
-              return;
-            }
-            setText(e.target.value);
-          }}
-        />
+        <input type='text' value={text} onChange={handleChange} />
       </div>
       <Main page='index' />
       <Footer />
