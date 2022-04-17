@@ -23,12 +23,13 @@ export default function Home() {
     };
   }, [count]);
 
-  const handleChange = (e) => {
-    if (text.length >= 5) {
+  const handleChange = useCallback((e) => {
+    if (e.target.value.length > 5) {
+      alert('5文字以内にしてください');
       return;
     }
     setText(e.target.value);
-  };
+  }, []);
 
   return (
     <div className={styles.container}>
