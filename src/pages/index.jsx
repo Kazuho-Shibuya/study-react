@@ -28,7 +28,7 @@ export default function Home() {
       alert('5文字以内にしてください');
       return;
     }
-    setText(e.target.value);
+    setText(e.target.value.trim());
   }, []);
 
   return (
