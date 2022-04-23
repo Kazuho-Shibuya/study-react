@@ -47,7 +47,13 @@ export default function Home() {
         </button>
         <button
           onClick={() => {
-            setIsShow(false);
+            setIsShow((isShow) => {
+              if (isShow === true) {
+                return false;
+              } else {
+                return true;
+              }
+            });
           }}
         >
           非表示
