@@ -47,16 +47,10 @@ export default function Home() {
         </button>
         <button
           onClick={() => {
-            setIsShow((isShow) => {
-              if (isShow === true) {
-                return false;
-              } else {
-                return true;
-              }
-            });
+            setIsShow((isShow) => !isShow);
           }}
         >
-          非表示
+          {isShow ? '非表示' : '表示'}
         </button>
         <input type='text' value={text} onChange={handleChange} />
       </div>
