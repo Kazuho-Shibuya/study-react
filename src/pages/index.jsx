@@ -15,6 +15,10 @@ export default function Home() {
     }
   }, [count]);
 
+  const handleDisplay = () => {
+    setIsShow((isShow) => !isShow);
+  };
+
   useEffect(() => {
     document.body.style.backgroundColor = 'lightblue';
     console.log('マウント時');
@@ -45,13 +49,7 @@ export default function Home() {
         <button href='/about' onClick={handleClick}>
           ボタン
         </button>
-        <button
-          onClick={() => {
-            setIsShow((isShow) => !isShow);
-          }}
-        >
-          {isShow ? '非表示' : '表示'}
-        </button>
+        <button onClick={handleDisplay}>{isShow ? '非表示' : '表示'}</button>
         <input type='text' value={text} onChange={handleChange} />
       </div>
       <Main page='index' />
