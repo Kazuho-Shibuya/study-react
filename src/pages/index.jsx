@@ -9,6 +9,15 @@ export default function Home() {
   const [count, setCount] = useState(1);
   const [text, setText] = useState('');
   const [isShow, setIsShow] = useState(true);
+
+  const handleChange = useCallback((e) => {
+    if (e.target.value.length > 5) {
+      alert('5文字以内にしてください');
+      return;
+    }
+    setText(e.target.value.trim());
+  }, []);
+
   const handleClick = useCallback(() => {
     if (count < 10) {
       setCount((count) => count + 1);
@@ -27,14 +36,6 @@ export default function Home() {
       console.log('あんマウント時');
     };
   }, [count]);
-
-  const handleChange = useCallback((e) => {
-    if (e.target.value.length > 5) {
-      alert('5文字以内にしてください');
-      return;
-    }
-    setText(e.target.value.trim());
-  }, []);
 
   return (
     <div className={styles.container}>
