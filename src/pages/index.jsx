@@ -31,10 +31,10 @@ export default function Home() {
 
   const handleAdd = useCallback(() => {
     setArray((prevArray) => {
-      const newArray = [...prevArray, 1];
+      const newArray = [...prevArray, text];
       return newArray;
     });
-  }, []);
+  }, [text]);
 
   useEffect(() => {
     document.body.style.backgroundColor = 'lightblue';
