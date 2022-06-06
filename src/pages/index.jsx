@@ -31,6 +31,10 @@ export default function Home() {
 
   const handleAdd = useCallback(() => {
     setArray((prevArray) => {
+      if (prevArray.some((item) => item === text)) {
+        alert('同じアイテムが存在します。');
+        return prevArray;
+      }
       const newArray = [...prevArray, text];
       return newArray;
     });
