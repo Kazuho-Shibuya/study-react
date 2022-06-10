@@ -5,19 +5,9 @@ import { Header } from 'src/components/Header';
 import { Footer } from 'src/components/Footer';
 import { Main } from 'src/components/Main';
 
-export default function Home() {
+const useCounter = () => {
   const [count, setCount] = useState(1);
-  const [text, setText] = useState('');
   const [isShow, setIsShow] = useState(true);
-  const [array, setArray] = useState([]);
-
-  const handleChange = useCallback((e) => {
-    if (e.target.value.length > 5) {
-      alert('5文字以内にしてください');
-      return;
-    }
-    setText(e.target.value.trim());
-  }, []);
 
   const handleClick = useCallback(() => {
     if (count < 10) {
@@ -28,6 +18,22 @@ export default function Home() {
   const handleDisplay = () => {
     setIsShow((isShow) => !isShow);
   };
+
+  return { count, isShow, handleClick, handleDisplay };
+};
+
+export default function Home() {
+  const { count, isShow, handleClick, handleDisplay } = useCounter();
+  const [text, setText] = useState('');
+  const [array, setArray] = useState([]);
+
+  const handleChange = useCallback((e) => {
+    if (e.target.value.length > 5) {
+      alert('5文字以内にしてください');
+      return;
+    }
+    setText(e.target.value.trim());
+  }, []);
 
   const handleAdd = useCallback(() => {
     setArray((prevArray) => {
