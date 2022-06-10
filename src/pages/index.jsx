@@ -35,8 +35,7 @@ export default function Home() {
         alert('同じアイテムが存在します。');
         return prevArray;
       }
-      const newArray = [...prevArray, text];
-      return newArray;
+      return [...prevArray, text];
     });
   }, [text]);
 
