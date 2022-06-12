@@ -22,8 +22,7 @@ const useCounter = () => {
   return { count, isShow, handleClick, handleDisplay };
 };
 
-export default function Home() {
-  const { count, isShow, handleClick, handleDisplay } = useCounter();
+const useInputArray = () => {
   const [text, setText] = useState('');
   const [array, setArray] = useState([]);
 
@@ -44,6 +43,13 @@ export default function Home() {
       return [...prevArray, text];
     });
   }, [text]);
+
+  return { text, array, handleChange, handleAdd };
+};
+
+export default function Home() {
+  const { count, isShow, handleClick, handleDisplay } = useCounter();
+  const { text, array, handleChange, handleAdd } = useInputArray();
 
   useEffect(() => {
     document.body.style.backgroundColor = 'lightblue';
