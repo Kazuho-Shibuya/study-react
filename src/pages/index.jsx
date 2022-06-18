@@ -47,18 +47,21 @@ const useInputArray = () => {
   return { text, array, handleChange, handleAdd };
 };
 
+const useBgColorBlue = () => {
+  useEffect(() => {
+    document.body.style.backgroundColor = 'lightblue';
+    return () => {
+      document.body.style.backgroundColor = '';
+    };
+  }, []);
+
+  return {};
+};
+
 export default function Home() {
   const { count, isShow, handleClick, handleDisplay } = useCounter();
   const { text, array, handleChange, handleAdd } = useInputArray();
-
-  useEffect(() => {
-    document.body.style.backgroundColor = 'lightblue';
-    console.log('マウント時');
-    return () => {
-      document.body.style.backgroundColor = '';
-      console.log('あんマウント時');
-    };
-  }, [count]);
+  useBgColorBlue();
 
   return (
     <div className={styles.container}>
