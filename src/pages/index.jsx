@@ -4,23 +4,7 @@ import styles from 'src/styles/Home.module.css';
 import { Header } from 'src/components/Header';
 import { Footer } from 'src/components/Footer';
 import { Main } from 'src/components/Main';
-
-const useCounter = () => {
-  const [count, setCount] = useState(1);
-  const [isShow, setIsShow] = useState(true);
-
-  const handleClick = useCallback(() => {
-    if (count < 10) {
-      setCount((count) => count + 1);
-    }
-  }, [count]);
-
-  const handleDisplay = () => {
-    setIsShow((isShow) => !isShow);
-  };
-
-  return { count, isShow, handleClick, handleDisplay };
-};
+import { useCounter } from 'src/hooks/useCounter';
 
 const useInputArray = () => {
   const [text, setText] = useState('');
