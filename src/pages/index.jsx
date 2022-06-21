@@ -4,32 +4,8 @@ import styles from 'src/styles/Home.module.css';
 import { Header } from 'src/components/Header';
 import { Footer } from 'src/components/Footer';
 import { Main } from 'src/components/Main';
+import { useInputArray } from 'src/hooks/useInputArray';
 import { useCounter } from 'src/hooks/useCounter';
-
-const useInputArray = () => {
-  const [text, setText] = useState('');
-  const [array, setArray] = useState([]);
-
-  const handleChange = useCallback((e) => {
-    if (e.target.value.length > 5) {
-      alert('5文字以内にしてください');
-      return;
-    }
-    setText(e.target.value.trim());
-  }, []);
-
-  const handleAdd = useCallback(() => {
-    setArray((prevArray) => {
-      if (prevArray.some((item) => item === text)) {
-        alert('同じアイテムが存在します。');
-        return prevArray;
-      }
-      return [...prevArray, text];
-    });
-  }, [text]);
-
-  return { text, array, handleChange, handleAdd };
-};
 
 const useBgColorBlue = () => {
   useEffect(() => {
