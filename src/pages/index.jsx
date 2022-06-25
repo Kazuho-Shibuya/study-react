@@ -6,17 +6,7 @@ import { Footer } from 'src/components/Footer';
 import { Main } from 'src/components/Main';
 import { useInputArray } from 'src/hooks/useInputArray';
 import { useCounter } from 'src/hooks/useCounter';
-
-const useBgColorBlue = () => {
-  useEffect(() => {
-    document.body.style.backgroundColor = 'lightblue';
-    return () => {
-      document.body.style.backgroundColor = '';
-    };
-  }, []);
-
-  return {};
-};
+import { useBgColorBlue } from 'src/hooks/useBgColorBlue';
 
 export default function Home() {
   const { count, isShow, handleClick, handleDisplay } = useCounter();
