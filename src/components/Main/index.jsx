@@ -35,7 +35,7 @@ export function Main(props) {
   return (
     <main className={styles.main}>
       <Headlines page={props.page}>
-        <code className={styles.code}>pages/{props.page}.js</code>
+        <code className={styles.code}>{items.length}</code>
       </Headlines>
       <Links items={items} handleReduce={handleReduce} />
     </main>
