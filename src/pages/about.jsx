@@ -6,7 +6,8 @@ import { Footer } from 'src/components/Footer';
 import { Main } from 'src/components/Main';
 
 export default function About(props) {
-  const { count, isShow, handleClick, handleDisplay, text, array, handleChange, handleAdd } = props;
+  const { doubleCount, isShow, handleClick, handleDisplay, text, array, handleChange, handleAdd } =
+    props;
 
   return (
     <div className={styles.container}>
@@ -17,7 +18,7 @@ export default function About(props) {
       </Head>
       <Header />
       <div className={styles.count}>
-        {isShow ? <h1>{count}</h1> : null}
+        {isShow ? <h1>{doubleCount}</h1> : null}
         <button href='/about' onClick={handleClick}>
           ボタン
         </button>
