@@ -5,7 +5,7 @@ import { Header } from 'src/components/Header';
 import { Footer } from 'src/components/Footer';
 import { Main } from 'src/components/Main';
 
-export default function About(props) {
+const About = (props) => {
   const { doubleCount, isShow, handleClick, handleDisplay, text, array, handleChange, handleAdd } =
     props;
 
@@ -35,4 +35,6 @@ export default function About(props) {
       <Footer />
     </div>
   );
-}
+};
+
+export default About;
