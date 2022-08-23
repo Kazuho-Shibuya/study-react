@@ -2,15 +2,21 @@ import React from 'react';
 import Link from 'next/link';
 import styles from 'src/components/Header/Header.module.css';
 
+const NAV_ITEMS = [
+  { href: '/', label: 'Index' },
+  { href: '/about', label: 'About' },
+];
+
 export const Header = () => {
   return (
     <header className={styles.header}>
-      <Link href='/'>
-        <button className={styles.anchor}>Index</button>
-      </Link>
-      <Link href='/about'>
-        <button className={styles.anchor}>About</button>
-      </Link>
+      {NAV_ITEMS.map((item) => {
+        return (
+          <Link key={item.href} href={item.href}>
+            <button className={styles.anchor}>{item.label}</button>
+          </Link>
+        );
+      })}
     </header>
   );
 };
