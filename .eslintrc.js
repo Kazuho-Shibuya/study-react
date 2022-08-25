@@ -10,6 +10,7 @@ module.exports = {
     'plugin:react-hooks/recommended',
     'plugin:jsx-a11y/recommended',
     'prettier',
+    'plugin:@next/next/recommended',
   ],
   parserOptions: {
     sourceType: 'module',

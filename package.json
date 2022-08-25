@@ -5,7 +5,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "run-p -c lint:*",
+    "lint": "next lint",
     "lint:eslint": "eslint --ext .jsx,.js .",
     "lint:prettier": "prettier --check .",
     "fix": "run-s -c fix:eslint fix:prettier",
