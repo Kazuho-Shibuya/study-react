@@ -1,11 +1,21 @@
-import React from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import Head from 'next/head';
 import styles from 'src/styles/Home.module.css';
 import { Header } from 'src/components/Header';
-import { Footer } from 'src/components/Footer';
-import { Main } from 'src/components/Main';
 
-const Home = (props) => {
+const Home = () => {
+  const [posts, setPosts] = useState([]);
+
+  const getPosts = useCallback(async () => {
+    const res = await fetch('https://jsonplaceholder.typicode.com/posts');
+    const json = await res.json();
+    setPosts(json);
+  }, []);
+
+  useEffect(() => {
+    getPosts();
+  }, [getPosts]);
+
   return (
     <div className={styles.container}>
       <Head>
@@ -14,22 +24,10 @@ const Home = (props) => {
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <Header />
-      <div className={styles.count}>
-        {props.isShow ? <h1>{props.count}</h1> : null}
-        <button href='/about' onClick={props.handleClick}>
-          ボタン
-        </button>
-        <button onClick={props.handleDisplay}>{props.isShow ? '非表示' : '表示'}</button>
-        <input type='text' value={props.text} onChange={props.handleChange} />
-        <button onClick={props.handleAdd}>追加</button>
-        <ul>
-          {props.array.map((item) => {
-            return <li key={item}>{item}</li>;
-          })}
-        </ul>
-      </div>
-      <Main page='index' />
-      <Footer />
+
+      {posts.map((post) => {
+        return <div key={post.id}>{post.title}</div>;
+      })}
     </div>
   );
 };
