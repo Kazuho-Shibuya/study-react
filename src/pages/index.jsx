@@ -24,10 +24,11 @@ const Home = () => {
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <Header />
-
-      {posts.map((post) => {
-        return <div key={post.id}>{post.title}</div>;
-      })}
+      <ol>
+        {posts.map((post) => {
+          return <li key={post.id}>{post.title}</li>;
+        })}
+      </ol>
     </div>
   );
 };
