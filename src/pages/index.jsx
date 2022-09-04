@@ -25,9 +25,11 @@ const Home = () => {
       </Head>
       <Header />
       <ol>
-        {posts.map((post) => {
-          return <li key={post.id}>{post.title}</li>;
-        })}
+        {posts.length > 0
+          ? posts.map((post) => {
+              return <li key={post.id}>{post.title}</li>;
+            })
+          : null}
       </ol>
     </div>
   );
