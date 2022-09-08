@@ -5,11 +5,13 @@ import { Header } from 'src/components/Header';
 
 const Home = () => {
   const [posts, setPosts] = useState([]);
+  const [loading, setLoading] = useState([true]);
 
   const getPosts = useCallback(async () => {
     const res = await fetch('https://jsonplaceholder.typicode.com/posts');
     const json = await res.json();
     setPosts(json);
+    setLoading(false);
   }, []);
 
   useEffect(() => {
@@ -25,11 +27,13 @@ const Home = () => {
       </Head>
       <Header />
       <ol>
-        {posts.length > 0
-          ? posts.map((post) => {
-              return <li key={post.id}>{post.title}</li>;
-            })
-          : null}
+        {loading ? (
+          <div>ローディング中</div>
+        ) : posts.length > 0 ? (
+          posts.map((post) => {
+            return <li key={post.id}>{post.title}</li>;
+          })
+        ) : null}
       </ol>
     </div>
   );
