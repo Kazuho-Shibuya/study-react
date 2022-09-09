@@ -10,7 +10,7 @@ const Home = () => {
   const getPosts = useCallback(async () => {
     const res = await fetch('https://jsonplaceholder.typicode.com/posts');
     const json = await res.json();
-    setPosts(json);
+    // setPosts(json);
     setLoading(false);
   }, []);
 
@@ -33,7 +33,9 @@ const Home = () => {
           posts.map((post) => {
             return <li key={post.id}>{post.title}</li>;
           })
-        ) : null}
+        ) : (
+          <div>データは空です</div>
+        )}
       </ol>
     </div>
   );
