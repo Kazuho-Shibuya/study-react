@@ -1,31 +1,10 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React from 'react';
 import Head from 'next/head';
 import styles from 'src/styles/Home.module.css';
 import { Header } from 'src/components/Header';
+import { Posts } from 'src/components/Posts';
 
 const Home = () => {
-  const [posts, setPosts] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-
-  const getPosts = useCallback(async () => {
-    try {
-      const res = await fetch('https://jsonplaceholder.typicode.com/postsaaa');
-      if (!res.ok) {
-        throw new Error('エラーが発生したため、データを取得できませんでした');
-      }
-      const json = await res.json();
-      setPosts(json);
-    } catch (error) {
-      setError(error);
-    }
-    setLoading(false);
-  }, []);
-
-  useEffect(() => {
-    getPosts();
-  }, [getPosts]);
-
   return (
     <div className={styles.container}>
       <Head>
@@ -35,17 +14,7 @@ const Home = () => {
       </Head>
       <Header />
       <ol>
-        {loading ? (
-          <div>ローディング中</div>
-        ) : error ? (
-          <div>{error.message}</div>
-        ) : posts.length > 0 ? (
-          posts.map((post) => {
-            return <li key={post.id}>{post.title}</li>;
-          })
-        ) : (
-          <div>データは空です</div>
-        )}
+        <Posts />
       </ol>
     </div>
   );
