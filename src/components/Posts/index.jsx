@@ -7,7 +7,7 @@ export const Posts = () => {
 
   const getPosts = useCallback(async () => {
     try {
-      const res = await fetch('https://jsonplaceholder.typicode.com/postsaaa');
+      const res = await fetch('https://jsonplaceholder.typicode.com/posts');
       if (!res.ok) {
         throw new Error('エラーが発生したため、データを取得できませんでした');
       }
