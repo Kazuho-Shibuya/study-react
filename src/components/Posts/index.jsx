@@ -31,27 +31,14 @@ export const Posts = () => {
 
   const getPosts = useCallback(async () => {
     try {
-      const res = await fetch('https://jsonplaceholder.typicode.com/posts');
+      const res = await fetch('https://jsonplaceholder.typicode.com/postsaaa');
       if (!res.ok) {
         throw new Error('エラーが発生したため、データを取得できませんでした');
       }
       const json = await res.json();
       dispatch({ type: 'end', data: json });
-      // setState((prevState) => {
-      //   return {
-      //     ...prevState,
-      //     data: json,
-      //     loading: false,
-      //   };
-      // });
     } catch (error) {
-      // setState((prevState) => {
-      //   return {
-      //     ...prevState,
-      //     error,
-      //     loading: false,
-      //   };
-      // });
+      dispatch({ type: 'error', error });
     }
   }, []);
 
