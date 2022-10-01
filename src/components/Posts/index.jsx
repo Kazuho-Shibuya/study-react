@@ -21,8 +21,9 @@ const reducer = (state, action) => {
         loading: false,
       };
 
-    default:
+    default: {
       throw new Error('no such action type');
+    }
   }
 };
 
