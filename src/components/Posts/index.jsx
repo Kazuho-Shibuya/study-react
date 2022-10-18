@@ -1,11 +1,9 @@
 import useSWR from 'swr';
-
 import React from 'react';
 
 export const Posts = () => {
-  const { data, error } = useSWR('https://jsonplaceholder.typicode.com/posts');
-
-  console.log(data, error);
+  const fetcher = (...args) => fetch(...args).then((res) => res.json());
+  const { data, error } = useSWR('https://jsonplaceholder.typicode.com/posts', fetcher);
 
   if (!error && !data) {
     return <div>ローディング中</div>;
