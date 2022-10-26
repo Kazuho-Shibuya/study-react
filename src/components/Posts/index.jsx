@@ -12,10 +12,20 @@ const fetcher = async (url) => {
   return json;
 };
 
-export const Posts = () => {
+const usePosts = () => {
   const { data, error } = useSWR('https://jsonplaceholder.typicode.com/posts', fetcher);
+  return {
+    data,
+    error,
+    isLoading: !error && !data,
+    isEmpty: data && data.length === 0,
+  };
+};
 
-  if (!error && !data) {
+export const Posts = () => {
+  const { data, error, isLoading, isEmpty } = usePosts();
+
+  if (isLoading) {
     return <div>ローディング中</div>;
   }
 
@@ -23,7 +33,7 @@ export const Posts = () => {
     return <div>{error.message}</div>;
   }
 
-  if (data.length === 0) {
+  if (isEmpty) {
     return <div>データは空です</div>;
   }
 
