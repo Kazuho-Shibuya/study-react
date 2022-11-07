@@ -2,8 +2,11 @@ import React from 'react';
 import Head from 'next/head';
 import styles from 'src/styles/Home.module.css';
 import { Header } from 'src/components/Header';
+import { useRouter } from 'next/router';
 
 const Home = () => {
+  const router = useRouter();
+
   return (
     <div className={styles.container}>
       <Head>
@@ -13,7 +16,7 @@ const Home = () => {
       </Head>
       <Header />
       <ol>
-        <div>test</div>
+        <div>{router.query.id}</div>
       </ol>
     </div>
   );
