@@ -4,7 +4,7 @@ import styles from 'src/styles/Home.module.css';
 import { Header } from 'src/components/Header';
 import { useRouter } from 'next/router';
 
-const Home = () => {
+const PostId = () => {
   const router = useRouter();
 
   return (
@@ -22,4 +22,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default PostId;
