@@ -18,7 +18,10 @@ const fetcher = async (url) => {
 
 const PostId = () => {
   const router = useRouter();
-  const { data, error } = useSWR('https://jsonplaceholder.typicode.com/posts/1', fetcher);
+  const { data, error } = useSWR(
+    `https://jsonplaceholder.typicode.com/posts/${router.query.id}`,
+    fetcher,
+  );
 
   return (
     <div className={styles.container}>
