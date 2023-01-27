@@ -23,6 +23,11 @@ const PostId = () => {
     fetcher,
   );
 
+  const { data: user, error: userError } = useSWR(
+    post?.userId ? `https://jsonplaceholder.typicode.com/users/${post.userId}` : null,
+    fetcher,
+  );
+
   return (
     <div className={styles.container}>
       <Head>
