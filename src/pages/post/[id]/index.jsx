@@ -40,6 +40,7 @@ const PostId = () => {
         <div>
           <h1>{post?.title}</h1>
           <p>{post?.body}</p>
+          <div>Created by {user?.name}</div>
         </div>
       </ol>
     </div>
