@@ -2,32 +2,10 @@ import React from 'react';
 import Head from 'next/head';
 import styles from 'src/styles/Home.module.css';
 import { Header } from 'src/components/Header';
-import { useRouter } from 'next/router';
-import useSWR from 'swr';
-
-const fetcher = async (url) => {
-  const response = await fetch(url);
-
-  if (!response.ok) {
-    throw new Error('エラーが発生したため、データの取得に失敗しました');
-  }
-
-  const json = await response.json();
-  return json;
-};
+import { usePost } from 'src/hooks/usePost';
 
 const PostId = () => {
-  const router = useRouter();
-  const { data: post, error: postError } = useSWR(
-    router.query.id ? `https://jsonplaceholder.typicode.com/posts/${router.query.id}` : null,
-    fetcher,
-  );
-
-  const { data: user, error: userError } = useSWR(
-    post?.userId ? `https://jsonplaceholder.typicode.com/users/${post.userId}` : null,
-    fetcher,
-  );
-
+  const { post, user, postError, postUser } = usePost();
   return (
     <div className={styles.container}>
       <Head>
