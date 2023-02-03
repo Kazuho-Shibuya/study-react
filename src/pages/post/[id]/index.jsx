@@ -18,7 +18,7 @@ const PostId = () => {
         <div>
           <h1>{post?.title}</h1>
           <p>{post?.body}</p>
-          <div>Created by {user?.name}</div>
+          {user?.name ? <div>Created by {user.name}</div> : null}
         </div>
       </ol>
     </div>
