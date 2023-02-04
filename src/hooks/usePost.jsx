@@ -26,7 +26,7 @@ export const usePost = () => {
   return {
     post,
     user,
-    postError,
-    userError,
+    error: postError || userError,
+    isLoading: !post && !user && !postError && !userError,
   };
 };
