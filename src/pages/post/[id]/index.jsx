@@ -5,7 +5,7 @@ import { Header } from 'src/components/Header';
 import { usePost } from 'src/hooks/usePost';
 
 const PostId = () => {
-  const { post, user, postError, postUser } = usePost();
+  const { post, user, error, isLoading } = usePost();
   return (
     <div className={styles.container}>
       <Head>
