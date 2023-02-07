@@ -1,0 +1,33 @@
+import { usePost } from 'src/hooks/usePost';
+import React from 'react';
+import Link from 'next/link';
+
+export const Post = () => {
+  const { data, error, isLoading, isEmpty } = usePost();
+
+  if (isLoading) {
+    return <div>ローディング中</div>;
+  }
+
+  if (error) {
+    return <div>{error.message}</div>;
+  }
+
+  if (isEmpty) {
+    return <div>データは空です</div>;
+  }
+
+  return (
+    <ol>
+      {data.map((post) => {
+        return (
+          <li key={post.id}>
+            <Link href={`/post/${post.id}`}>
+              <a>{post.title}</a>
+            </Link>
+          </li>
+        );
+      })}
+    </ol>
+  );
+};
