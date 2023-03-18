@@ -12,6 +12,7 @@ const Index = (props) => {
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <Header />
+      <div>Next.jsで学ぶReact講座</div>
     </div>
   );
 };
